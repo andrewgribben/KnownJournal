@@ -34,10 +34,14 @@
 
 
 	if (!empty($object->lat)) {
-?>
+
+	if (\Idno\Core\Idno::site()->currentPage()->isPermalink())
+	{
+	?>
 
         <div id="map_<?= $object->_id ?>" style="height: 200px;"></div>
-<?php } ?>
+<?php }
+	} ?>
 
 	<?php
     }
